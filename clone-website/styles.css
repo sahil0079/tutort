@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 20px;
+    align-items: center;
+    background-color: white;
+}
+
+.left_section {
+    display: flex;
+    align-items: center;
+}
+
+.left_section #list {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search form {
+    display: flex;
+    border-radius: 1px solid black;
+    height: 40px;
+}
+
+.search form input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.search form input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.search form button {
+    width: 60px;
+    border: none;
+}
+
+.material-icons {
+    color: gray;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    background: whitesmoke;
+    height: calc(100vh-70px);
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: white;
+    width: 20%;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    color: gray;
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    padding: 12px 30px;
+}
+
+.nav_link span {
+    margin-left: 15px;
+}
+
+.nav_link:hover {
+    cursor: pointer;
+}
+
+.active {
+    background-color: lightgray;
+}
+
+hr {
+    height: 1px;
+    background-color: lightgrey;
+    border: none;
+}
+
+.content {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #ddd;
+    overflow-y: scroll;
+    padding: 15px;
+}
+
+.videos_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.video_card {
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 200px;
+}
+
+.thumbnail img {
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.details {
+    display: flex;
+}
+
+.details .left_section img {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.details .right_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.details .right_section h3 {
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.details .right_section a,
+span {
+    text-decoration: none;
+    color: gray;
+    font-size: 12px;
+}
+
+@media (max-width:800px) {
+    .sidebar {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+}
+
+@media (max-width:940px) {
+    .search form input {
+        width: 25rem;
+
+    }
+}
