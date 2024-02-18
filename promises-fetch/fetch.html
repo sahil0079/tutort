@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-list-item {
+            border-bottom: 1px solid lightgray;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-details {
+            flex: 1;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+
+        .user-email {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User Data</h1>
+
+        <ul class="user-list" id="user-list">
+            <!-- user data will be inserted here -->
+        </ul>
+    </div>
+
+    <script>
+        //fetch
+        //crud => create -> post, read -> get, update -> put , delete -> delete
+
+        //ajax async javascript and xml
+
+        //fetch() method is modern and returns a promise
+
+        // let promise  = fetch(url, [options])
+
+        //url => url to access data
+        //options => optional parameters: method, headers etc
+
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            // .then(function (resp) {
+            //     return resp.json()
+            // })
+            // .then(function (userData) {
+            //     console.log(userData)
+            // })
+            .then(resp => resp.json())
+            .then(userData => {
+
+                const userList = document.getElementById("user-list");
+
+                userData.forEach(function (user) {
+                    console.log(user)
+
+                    const listItem = document.createElement("li");
+
+                    listItem.classList.add("user-list-item");
+
+                    listItem.innerHTML = ` 
+                        <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar" >
+
+                        <div class="user-details">
+                            <div class="user-name"> ${user.name} </div>
+                            <div class="user-email"> ${user.email
+                        } </div>
+
+                        </div>
+                    `;
+
+                    userList.append(listItem);
+                })
+            })
+
+
+
+
+    </script>
+
+</body>
+
+</html>
